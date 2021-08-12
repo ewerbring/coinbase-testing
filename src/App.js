@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Coin from "./components/Coin"
+import HeaderTest from "./components/headerTest"
 
 
 function App() {
@@ -47,8 +48,11 @@ useEffect(()=>{
     <button onClick={()=>setResourceType("users")}>users</button>
     <button onClick={()=>setResourceType("posts")}>posts</button>
     <button onClick={()=>setResourceType("comments")}>comments</button>
+    <button onClick={()=>setResourceType("main")}>main</button>
+
     {resourceType}
     <Coin/>
+    <HeaderTest/>
     </div>
   );
 }

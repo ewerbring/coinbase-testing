@@ -1,13 +1,11 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const sandboxURI = 'https://api-public.sandbox.pro.coinbase.com/coinbase-accounts';
 
-
-module.exports = app => {
+module.exports = function(app) {
   app.use(
-    "/api",
+    '/api',
     createProxyMiddleware({
-      target: sandboxURI,
-      changeOrigin: true
+      target: 'https://api-public.sandbox.pro.coinbase.com/products/BTC-USD',
+      changeOrigin: true,
     })
   );
 };
