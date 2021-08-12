@@ -2,24 +2,25 @@ import Api from "./Api";
 import Mobile from "./Mobile";
 import Desktop from "./Desktop";
 import React, { useState, useEffect } from "react";
+import P5 from "./P52";
 
 let isMobile = false;
 
 function Main() {
-  const [count, setCount] = useState(0);
+  const [width, setWidth] = useState(0);
+  window.addEventListener("resize", setWidth);
 
   useEffect(() => {
     let width = window.innerWidth;
     console.log(`window width is ${width}`);
     width < 800 ? (isMobile = true) : (isMobile = false);
-  });
-
-  window.addEventListener("resize", setCount);
+  }, [width]);
 
   return (
     <div>
       {/* <Api /> */}
-      {isMobile ? <Mobile /> : <Desktop />}
+      <P5 />
+      {/* {isMobile ? <Mobile /> : <Desktop />} */}
     </div>
   );
 }

@@ -57,6 +57,22 @@
   overflow: hidden;
 }
 
+.contentContainer {
+  position: relative;
+  left: 25%;
+  right: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(5, 20vh);
+  width: 50%;
+  height: 100%;
+}
+
+.titleContainer {
+  border: 1px solid blue;
+}
+
 .cog {
   width: 30px;
   display: inline;
@@ -121,14 +137,6 @@
   right: 0px;
   bottom: 0px;
   z-index: 150;
-}
-.contentContainer {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-rows: repeat(5, 20vh);
-  width: 100%;
-  height: 100%;
 }
 
 .textBlock1 {

@@ -5,7 +5,6 @@ import Video from "../assets/placeholder.mp4";
 import Heart from "../assets/heart.png";
 import Beanie from "../assets/beanie.jpeg";
 import Cog from "../assets/cog.png";
-
 export default function Desktop() {
   return (
     <div>
@@ -20,6 +19,7 @@ export default function Desktop() {
           <span className="textBlock1">textblock1</span>
           <img alt="alt" src={Cog} className="cog" />
         </div>
+
         <div className="imageContainer">
           <img alt="alt" src={Heart} className="heart1" />
           <img alt="alt" src={Heart} className="heart2" />
@@ -36,7 +36,7 @@ export default function Desktop() {
           Emmet does not expand "Lorem ipsum" anymore · Issue
           ...https://github.com › Microsoft › vscode › issues 21 Aug 2017 —
           VSCode Version: Code 1.15.1 (41abd21, 2017-08-16T17:16:27.618Z) OS
-          Version: Linux x64 4.4.0-92-generic Extensions: Extension Author ...
+          Version: Linux x64 4.4.0-92-generic Extensiitons: Extension Author ...
         </div>
         <div></div>
       </div>
