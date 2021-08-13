@@ -20,20 +20,15 @@ async function cb_request( method, path, headers = {}, body = ''){
       var key = Buffer.from(apiSecret, 'base64');
       var signature = crypto.createHmac('sha256', key).update(message).digest('base64');
     
-      //create the request options object
-      var baseUrl = 'https://api-public.sandbox.pro.coinbase.com';
+      //create the request options object    
+      var baseUrl = 'http://localhost:3002';//'https://api-public.sandbox.pro.coinbase.com';
     
       headers = Object.assign({},headers,{
         'content-type': 'application/json; charset=UTF-8',
           'CB-ACCESS-SIGN': signature,
           'CB-ACCESS-TIMESTAMP': timestamp,
           'CB-ACCESS-KEY': apiKey,
-          'CB-ACCESS-PASSPHRASE': apiPass,
-          'USER-AGENT': 'request',
-          'Host': 'http://localhost:3002/',
-          'Target' : baseUrl,
-          'Access-Control-Allow-Origin': '*'
-              
+          'CB-ACCESS-PASSPHRASE': apiPass
         });
     
       // Logging the headers here to ensure they're sent properly
