@@ -5,9 +5,9 @@ var request = require('request');
     
 async function cb_request( method, path, headers = {}, body = ''){
     
-      var apiKey = '3cc67cda1ba3e0beabb22dadd889c23b',
-          apiSecret = 'okmaGMsRFHEGXoLLhLn17pudpvbDNnHVIGMV4DSbNREuWhDqbY0gSrcKi6bkIeHnfCdF08bfUN3UsdsSjj3sqw==',
-          apiPass = '444444';
+      var apiKey = '979cf89dcd861fabae63daefdab16d26',
+          apiSecret = 'RBisB44IvJSnMqmV007IgmqgQGCfj782VabeHGIKo1YJ0SA8nDL2y4cpecWVSw6chvg6Rrfy9JJGm46iNtBECw==',
+          apiPass = 'qyvpbe580w';
     
       //get unix time in seconds
       var timestamp = Math.floor(Date.now() / 1000);
@@ -67,23 +67,30 @@ async function cb_request( method, path, headers = {}, body = ''){
            console.log(e);
         }
       
-        var buyParams = JSON.stringify({
-          'type': 'market',
-          'side': 'buy',
-          'funds': '10',
-          'product_id': 'BTC-USD'
-        });
-      
         try {
-          console.log('try to call orders------->');
-          var buy = await cb_request('POST','/orders', {}, buyParams);
-          console.log(buy);
-          console.log('orders----------------------->done');
+            console.log('try to get accounts ------->');
+            console.log( await cb_request('GET', '/accounts'))
+        }
+        catch(e){
+            console.log(e);
+        }
+        // var buyParams = JSON.stringify({
+        //   'type': 'market',
+        //   'side': 'buy',
+        //   'funds': '10',
+        //   'product_id': 'BTC-USD'
+        // });
       
-        }
-        catch(e) {
-           console.log(e);
-        }
+        // try {
+        //   console.log('try to call orders------->');
+        //   var buy = await cb_request('POST','/orders', {}, buyParams);
+        //   console.log(buy);
+        //   console.log('orders----------------------->done');
+      
+        // }
+        // catch(e) {
+        //    console.log(e);
+        // }
       
       }
 
